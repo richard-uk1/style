@@ -2,9 +2,9 @@
 name = "style"
 version = "0.1.0"
 authors = ["Richard Dodd <richard.o.dodd@gmail.com>"]
-edition = "2018"
 description = "Will be a lib for processing css styles"
-license = "MIT/Apache-2.0"
+license = { workspace = true }
+edition = { workspace = true }
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -17,3 +17,7 @@ bumpalo = ["style-shared/bumpalo", "style-proc/bumpalo"]
 
 [workspace]
 members = [".", "proc", "shared", "scripts"]
+
+[workspace.package]
+license = "MIT/Apache-2.0"
+edition = "2021"

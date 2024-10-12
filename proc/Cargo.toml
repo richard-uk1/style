@@ -2,7 +2,8 @@
 name = "style-proc"
 version = "0.1.0"
 authors = ["Richard Dodd <richard.o.dodd@gmail.com>"]
-edition = "2018"
+license = { workspace = true }
+edition = { workspace = true }
 
 [lib]
 proc-macro = true
