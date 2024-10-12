@@ -1,5 +1,3 @@
-use proc_macro_hack::proc_macro_hack;
-
 pub use style_shared::{
     AlignItems, AutoLengthPercentage, Border, BoxShadow, BoxSizing, Calc, Color, ColumnCount,
     Display, DynamicColor, FlexBasis, FlexDirection, FlexWrap, Font, FontFamily, FontStyle,
@@ -51,7 +49,6 @@ pub use style_shared::{
 ///         font-weight:200;padding:0 1em;color:#00eeee;".to_string()
 /// );
 /// ```
-#[proc_macro_hack]
 pub use style_proc::styles;
 
 /// Parse a list of css properties, and embed the result in the output binary as a static string.
@@ -77,7 +74,6 @@ pub use style_proc::styles;
 ///         font-weight:200;padding:0 1em;color:#00eeee;"
 /// );
 /// ```
-#[proc_macro_hack]
 pub use style_proc::static_styles;
 
 /// Parse a css property.
@@ -92,7 +88,6 @@ pub use style_proc::static_styles;
 /// let prop = property!(dummy); // special property name that means ignore
 /// assert_eq!(prop.to_string(), "".to_string());
 /// ```
-#[proc_macro_hack]
 pub use style_proc::property;
 
 /// Parse a css color.
@@ -104,5 +99,4 @@ pub use style_proc::property;
 /// let prop = color!(hsla(60, 50%, 30%, 0.2));
 /// assert_eq!(prop.to_string(), "hsla(60, 50%, 30%, 0.2)".to_string());
 /// ```
-#[proc_macro_hack]
 pub use style_proc::color;

@@ -11,15 +11,9 @@ license = "MIT/Apache-2.0"
 [dependencies]
 style-shared = { version = "0.1", path = "shared" }
 style-proc = { version = "0.1", path = "proc" }
-proc-macro-hack = "0.5.11"
 
 [features]
 bumpalo = ["style-shared/bumpalo", "style-proc/bumpalo"]
 
 [workspace]
-members = [
-    ".",
-    "proc",
-    "shared",
-    "scripts"
-]
+members = [".", "proc", "shared", "scripts"]

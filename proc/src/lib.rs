@@ -1,10 +1,9 @@
 extern crate proc_macro;
 use proc_macro::TokenStream;
-use proc_macro_hack::proc_macro_hack;
 use quote::{quote, ToTokens};
 use style_shared::{Color, DynamicStyles, Style, Styles};
 
-#[proc_macro_hack]
+#[proc_macro]
 pub fn styles(s: TokenStream) -> TokenStream {
     let styles: DynamicStyles = match syn::parse(s) {
         Ok(s) => s,
@@ -13,7 +12,7 @@ pub fn styles(s: TokenStream) -> TokenStream {
     styles.to_token_stream().into()
 }
 
-#[proc_macro_hack]
+#[proc_macro]
 pub fn static_styles(s: TokenStream) -> TokenStream {
     let styles: Styles = match syn::parse(s) {
         Ok(s) => s,
@@ -23,7 +22,7 @@ pub fn static_styles(s: TokenStream) -> TokenStream {
     quote!(#styles).into()
 }
 
-#[proc_macro_hack]
+#[proc_macro]
 pub fn property(s: TokenStream) -> TokenStream {
     let style: Style = match syn::parse(s) {
         Ok(s) => s,
@@ -32,7 +31,7 @@ pub fn property(s: TokenStream) -> TokenStream {
     style.to_token_stream().into()
 }
 
-#[proc_macro_hack]
+#[proc_macro]
 pub fn color(s: TokenStream) -> TokenStream {
     let color: Color = match syn::parse(s) {
         Ok(s) => s,
